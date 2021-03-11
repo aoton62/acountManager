@@ -1,6 +1,7 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KindController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', 'App\Http\Controllers\TestController@index');
+Route::resource('kind', KindController::class);
+Route::resource('kind.create', KindController::class);
+Route::resource('kind.delete', KindController::class);
+Route::resource('category', CategoryController::class);
